@@ -1,0 +1,32 @@
+.board {
+    height: 70vh;
+    width: 70vh;
+    background-color: seagreen;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell {
+    margin: auto;
+    height: 10%;
+    width: 10%;
+    background-color: rgb(188, 188, 188);
+    border-style: solid;
+    display: inline-block;
+}
+
+.text {
+    height: 100%;
+    margin: auto;
+    display: inline-block;
+    vertical-align: middle;
+    color: black;
+}
+
+.active:hover {
+    background-color: lightgrey;
+}
+
+.inactive {
+    background-color: rgb(145, 144, 144);
+}
