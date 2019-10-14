@@ -12,18 +12,20 @@ class Cell extends React.Component {
 	handleClick = () => {
 		if (this.state.clicked && !this.state.flagged) {
 			return;
-		} else if (this.props.flagging) {
-			this.setState({ clicked: !this.state.clicked });
-			this.setState({ flagged: !this.state.flagged });
-		} else if (this.state.clicked === false) {
-			this.setState({ clicked: true });
-			if (this.props.isBomb) {
-				this.props.endGame();
-			} else if (!this.state.flagged) {
-				this.props.updateScore();
+		} else {
+			if (this.props.flagging) {
+				this.setState({ clicked: !this.state.clicked });
+				this.setState({ flagged: !this.state.flagged });
+			} else if (this.state.clicked === false) {
+				this.setState({ clicked: true });
+				if (this.props.isBomb) {
+					this.props.endGame();
+				} else if (!this.state.flagged) {
+					this.props.updateScore();
+				}
 			}
-			this.props.victory();
 		}
+		this.props.victory();
 	};
 
 	showCell = () => {
