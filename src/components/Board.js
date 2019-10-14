@@ -47,7 +47,6 @@ class Board extends React.Component {
 			alert(`You WON!🏆\nYour Score was ${this.state.score}`);
 			this.props.finishGame();
 		}
-		console.log(bombs);
 	};
 
 	calculateSurroundings = (row, col) => {
